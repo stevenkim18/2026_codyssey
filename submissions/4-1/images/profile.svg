@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-labelledby="title desc">
+  <title id="title">SK 프로필 일러스트</title>
+  <desc id="desc">초록색 배경 위에 추상적인 사람의 얼굴을 표현한 프로필 일러스트</desc>
+  <rect width="640" height="640" fill="#b6dc5b"/>
+  <circle cx="320" cy="320" r="230" fill="#e9c2a8"/>
+  <path d="M112 294C111 148 207 69 326 69c123 0 207 90 207 212-44-43-91-70-151-84-69 52-154 82-270 97Z" fill="#19352b"/>
+  <path d="M164 330c-16-38-10-85 21-111 9 53 23 84 53 111 0 0-42 27-74 0ZM476 330c16-38 10-85-21-111-9 53-23 84-53 111 0 0 42 27 74 0Z" fill="#19352b"/>
+  <circle cx="234" cy="326" r="13" fill="#19352b"/><circle cx="406" cy="326" r="13" fill="#19352b"/>
+  <path d="M273 419c29 22 65 22 94 0" fill="none" stroke="#19352b" stroke-linecap="round" stroke-width="12"/>
+  <path d="M170 519c40-59 93-84 150-84s110 25 150 84" fill="#19352b"/>
+  <circle cx="513" cy="118" r="30" fill="#f4f1eb"/>
+  <path d="M500 118h26M513 105v26" stroke="#19352b" stroke-width="5"/>
+</svg>

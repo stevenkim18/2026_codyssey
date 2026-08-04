@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Steven Kim의 프론트엔드 개발자 포트폴리오" />
+    <title>Steven Kim | Frontend Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="icon" href="images/profile.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">본문으로 건너뛰기</a>
+
+    <header class="site-header" id="site-header">
+      <nav class="nav container" aria-label="주요 메뉴">
+        <a class="logo" href="#hero" aria-label="홈으로 이동">SK<span>.</span></a>
+        <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="primary-menu">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-menu" id="primary-menu">
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#skills">Skills</a>
+          <a class="nav-link" href="#projects">Projects</a>
+          <a class="nav-link" href="#contact">Contact</a>
+          <button class="theme-toggle" type="button" aria-label="다크 모드로 전환" aria-pressed="false">
+            <span class="theme-icon" aria-hidden="true">☼</span>
+            <span class="theme-label">Light</span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero section" id="hero" aria-labelledby="hero-title">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow"><span class="status-dot"></span> Available for new ideas</p>
+            <h1 id="hero-title">작은 디테일로<br /><em>더 나은 경험</em>을 만듭니다.</h1>
+            <p class="hero-description">안녕하세요, 사용자와 기술 사이를 세심하게 연결하는 프론트엔드 개발자 <strong>Steven Kim</strong>입니다.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#projects">프로젝트 보기 <span aria-hidden="true">↗</span></a>
+              <a class="button button-ghost" href="#contact">연락하기</a>
+            </div>
+            <div class="hero-meta" aria-label="소개 정보">
+              <span>Based in Seoul, KR</span><span>·</span><span>Always learning</span>
+            </div>
+          </div>
+          <div class="hero-art reveal" aria-label="프로필 소개 그래픽" role="img">
+            <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+            <div class="hero-card hero-card-main">
+              <span class="card-index">01 / 03</span>
+              <img src="images/profile.svg" alt="Steven Kim의 프로필 일러스트" />
+              <p>Curiosity<br /><strong>drives</strong> craft.</p>
+            </div>
+            <div class="floating-note note-top">BUILD WITH<br /><strong>INTENTION</strong></div>
+            <div class="floating-note note-bottom">// hello, world</div>
+          </div>
+        </div>
+        <a class="scroll-cue" href="#about"><span>Scroll to explore</span><span aria-hidden="true">↓</span></a>
+      </section>
+
+      <section class="section section-muted" id="about" aria-labelledby="about-title">
+        <div class="container split-layout">
+          <div class="section-heading reveal"><p class="eyebrow">01 — About me</p><h2 id="about-title">코드 너머의<br /><em>이야기</em>를 봅니다.</h2></div>
+          <div class="about-content reveal">
+            <p class="lead">좋은 인터페이스는 보기 좋은 화면에서 끝나지 않는다고 생각합니다. 사람의 맥락을 이해하고, 복잡한 문제를 단순하게 풀어내는 과정에 매력을 느낍니다.</p>
+            <p>새로운 것을 배우고 직접 만들어보며 성장합니다. 팀과 함께 아이디어를 구체화하고, 누구나 편하게 사용할 수 있는 제품을 만드는 것이 목표입니다.</p>
+            <div class="about-facts"><div><span class="fact-number">01</span><span>사용자 중심<br />사고</span></div><div><span class="fact-number">02</span><span>꾸준한<br />성장</span></div><div><span class="fact-number">03</span><span>명확한<br />커뮤니케이션</span></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="skills" aria-labelledby="skills-title">
+        <div class="container">
+          <div class="section-heading reveal"><p class="eyebrow">02 — What I use</p><h2 id="skills-title">배우고, 만들고,<br /><em>다시 나아갑니다.</em></h2></div>
+          <div class="skills-grid reveal">
+            <article class="skill-card"><span class="skill-number">01</span><h3>Frontend</h3><p>웹의 구조와 동작을 이해하고, 탄탄한 기본기 위에 인터랙션을 쌓습니다.</p><ul><li>HTML5</li><li>CSS3</li><li>JavaScript</li></ul></article>
+            <article class="skill-card"><span class="skill-number">02</span><h3>Tools</h3><p>더 나은 결과물을 위해 작업 과정을 정리하고 효율적인 도구를 활용합니다.</p><ul><li>Git / GitHub</li><li>VS Code</li><li>Figma</li></ul></article>
+            <article class="skill-card skill-card-accent"><span class="skill-number">03</span><h3>Mindset</h3><p>배운 것을 기록하고, 작은 실험을 반복하며 문제 해결력을 키웁니다.</p><ul><li>Curiosity</li><li>Consistency</li><li>Empathy</li></ul></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-muted" id="projects" aria-labelledby="projects-title">
+        <div class="container">
+          <div class="section-heading projects-heading reveal"><div><p class="eyebrow">03 — Selected work</p><h2 id="projects-title">만들면서<br /><em>배운 것들.</em></h2></div><p class="section-intro">GitHub에서 최근 작업을<br />자동으로 불러옵니다.</p></div>
+          <div class="project-status" id="project-status" role="status" aria-live="polite"><span class="spinner" aria-hidden="true"></span><span>프로젝트를 불러오는 중...</span></div>
+          <div class="projects-grid" id="projects-grid"></div>
+          <div class="project-error" id="project-error" hidden><p>프로젝트를 불러올 수 없습니다.</p><button class="button button-ghost" id="retry-projects" type="button">다시 시도</button></div>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="container contact-layout">
+          <div class="section-heading reveal"><p class="eyebrow">04 — Say hello</p><h2 id="contact-title">함께 무언가를<br /><em>만들어볼까요?</em></h2><p class="contact-copy">새로운 프로젝트, 협업 아이디어, 혹은 가벼운 인사까지 편하게 남겨주세요.</p><div class="contact-links"><a href="mailto:11882@naver.com">11882@naver.com <span>↗</span></a><a href="https://github.com/stevenkim18" target="_blank" rel="noreferrer">github.com/stevenkim18 <span>↗</span></a></div></div>
+          <form class="contact-form reveal" id="contact-form" novalidate>
+            <div class="form-field"><label for="name">이름 <span>*</span></label><input id="name" name="name" type="text" placeholder="이름을 입력해주세요" autocomplete="name" aria-describedby="name-error" /><small class="field-error" id="name-error"></small></div>
+            <div class="form-field"><label for="email">이메일 <span>*</span></label><input id="email" name="email" type="email" placeholder="name@example.com" autocomplete="email" aria-describedby="email-error" /><small class="field-error" id="email-error"></small></div>
+            <div class="form-field"><label for="message">메시지 <span>*</span></label><textarea id="message" name="message" rows="5" placeholder="무엇을 함께 만들고 싶은가요?" aria-describedby="message-error"></textarea><small class="field-error" id="message-error"></small></div>
+            <button class="button button-primary form-submit" type="submit">메시지 보내기 <span aria-hidden="true">↗</span></button>
+            <p class="form-success" id="form-success" role="status" hidden>메시지가 확인되었습니다. 연락 주셔서 감사합니다!</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-content"><a class="logo" href="#hero">SK<span>.</span></a><p>© <span id="current-year">2026</span> Steven Kim. Built with curiosity.</p><div class="footer-links"><a href="https://github.com/stevenkim18" target="_blank" rel="noreferrer">GitHub</a><a href="#contact">Contact</a></div></div>
+    </footer>
+    <button class="back-to-top" id="back-to-top" type="button" aria-label="맨 위로 이동" hidden>↑</button>
+  </body>
+</html>
