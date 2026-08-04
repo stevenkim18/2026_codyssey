@@ -19,12 +19,18 @@
 └── README.md               # 실행·배포·기능 요약
 ```
 
+평가 항목별 상세 설명은 다음 문서에서 확인할 수 있습니다.
+
+- 항목 2: [`06-evaluation-item2.md`](./06-evaluation-item2.md)
+- 항목 3: [`07-evaluation-item3.md`](./07-evaluation-item3.md)
+- 항목 4: [`08-evaluation-item4.md`](./08-evaluation-item4.md)
+
 ## 3. 요구사항과 구현 위치
 
 | 요구사항 | 구현 위치 | 설명할 핵심 |
 | --- | --- | --- |
 | 시맨틱 HTML | `index.html` | `header`, `nav`, `main`, `section`, `article`, `footer`로 의미에 맞게 구조화 |
-| 반응형 레이아웃 | `css/style.css` | 모바일 퍼스트, 768px·1024px 브레이크포인트 |
+| 반응형 레이아웃 | `css/style.css` | 모바일·태블릿·데스크톱 대응, 768px·1024px 브레이크포인트 |
 | Flexbox/Grid | `css/style.css` | 네비게이션은 Flexbox, 프로젝트 카드는 Grid |
 | 햄버거 메뉴 | `js/main.js` | 클릭 → `active` 클래스 변경 → 메뉴 표시 변경 |
 | 다크 모드 | `js/main.js`, `css/style.css` | 테마 상태 변경 → `data-theme` 변경 → CSS 변수 변경 → 저장 |
@@ -112,4 +118,3 @@ DOM 업데이트(textContent, innerHTML, classList)
 ### 프로젝트에서 직접 바꿔야 하는 값은 무엇인가요?
 
 `js/main.js`의 `portfolioConfig.githubUsername`, `index.html`의 이름·이메일·소셜 링크를 본인의 정보로 확인하면 됩니다.
-

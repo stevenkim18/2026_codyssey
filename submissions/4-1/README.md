@@ -5,7 +5,7 @@
 ## 배포
 
 - GitHub 저장소: `https://github.com/stevenkim18/2026_codyssey`
-- GitHub Pages: `main` 브랜치의 저장소 루트를 배포한 경우 `https://stevenkim18.github.io/2026_codyssey/submissions/4-1/`에서 확인할 수 있습니다.
+- GitHub Pages: [https://stevenkim18.github.io/2026_codyssey/submissions/4-1/](https://stevenkim18.github.io/2026_codyssey/submissions/4-1/)
 
 ## 사용 기술
 
@@ -48,8 +48,8 @@ VS Code에서 `submissions/4-1` 폴더를 열고 Live Server로 `index.html`을 
 
 ## 제출 전 체크리스트
 
-- [ ] GitHub Pages 배포 URL 추가
+- [x] GitHub Pages 배포 URL 추가
 - [x] 데스크톱 스크린샷 추가
 - [x] 모바일 스크린샷 추가
 - [x] 다크 모드 스크린샷 추가
-- [ ] `js/main.js`의 `githubUsername`과 소개 문구 확인
+- [x] `js/main.js`의 `githubUsername`과 소개 문구 확인
