@@ -23,10 +23,10 @@ function LandingPage() {
             시작하기
           </Link>
           <Link
-            to="/projects"
+            to="/login"
             className="rounded-xl border border-slate-300 bg-white px-5 py-3 font-semibold text-slate-700 transition hover:border-slate-400"
           >
-            프로젝트 둘러보기
+            로그인하고 둘러보기
           </Link>
         </div>
       </section>
