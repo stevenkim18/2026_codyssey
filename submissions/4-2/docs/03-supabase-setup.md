@@ -290,7 +290,13 @@ RLS는 데이터베이스 행마다 접근 가능 여부를 확인하는 기능�
     using ((select auth.uid()) = user_id)
     with check ((select auth.uid()) = user_id);
 
-프로젝트는 삭제하지 않고 보관하므로 MVP에서는 delete 정책을 만들지 않습니다.
+    create policy "projects_delete_own"
+    on public.projects
+    for delete
+    to authenticated
+    using ((select auth.uid()) = user_id);
+
+프로젝트 보관은 `is_archived`를 true로 변경해 목록에서 숨기는 기능이고, 프로젝트 삭제는 연결된 할 일과 함께 영구 삭제하는 기능입니다. `tasks.project_id`에 `on delete cascade`가 설정되어 있어 프로젝트 삭제 시 하위 할 일도 함께 삭제됩니다.
 
 ### 9-3. tasks 정책
 

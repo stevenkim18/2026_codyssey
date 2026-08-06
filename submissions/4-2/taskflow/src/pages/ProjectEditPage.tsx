@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link, useNavigate, useParams } from "react-router"
+import ErrorState from "../components/ErrorState"
+import LoadingState from "../components/LoadingState"
 import PageHeader from "../components/PageHeader"
 import { getErrorMessage } from "../lib/errors"
 import { getProjectById, updateProject } from "../lib/projectApi"
@@ -77,7 +79,7 @@ function ProjectEditPage() {
   return (
     <main className="mx-auto max-w-2xl px-6 py-10">
       <PageHeader eyebrow={`Project ${id ?? ""}`} title="프로젝트 수정" description="프로젝트 정보를 변경합니다." />
-      {isLoading ? <div className="rounded-2xl border border-slate-200 bg-white px-6 py-12 text-center text-sm text-slate-500">프로젝트를 불러오고 있습니다...</div> : <form className="space-y-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm" onSubmit={(event) => void handleSubmit(event)}>
+      {isLoading ? <LoadingState message="프로젝트를 불러오고 있습니다..." /> : <form className="space-y-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm" onSubmit={(event) => void handleSubmit(event)}>
         <label className="block text-sm font-medium text-slate-700">
           프로젝트 이름
           <input className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:border-blue-500" value={name} onChange={(event) => setName(event.target.value)} required />
@@ -92,7 +94,7 @@ function ProjectEditPage() {
             {colors.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
           </select>
         </label>
-        {error && <p className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700" role="alert">{error}</p>}
+        {error && <ErrorState message={error} compact />}
         <div className="flex justify-end gap-3">
           <Link className="rounded-xl border border-slate-300 px-4 py-3 font-semibold text-slate-700" to={`/projects/${id}`}>취소</Link>
           <button className="rounded-xl bg-blue-600 px-4 py-3 font-semibold text-white hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60" type="submit" disabled={isSubmitting}>{isSubmitting ? "저장 중..." : "저장"}</button>

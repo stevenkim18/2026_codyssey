@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { Link, Navigate, useNavigate } from "react-router"
+import ErrorState from "../components/ErrorState"
+import LoadingState from "../components/LoadingState"
 import { useAuth } from "../contexts/useAuth"
 import { getErrorMessage } from "../lib/errors"
 
@@ -13,7 +15,7 @@ function SignupPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   if (isLoading) {
-    return <div className="flex min-h-[calc(100vh-73px)] items-center justify-center text-sm text-slate-500">로그인 상태를 확인하고 있습니다...</div>
+    return <LoadingState message="로그인 상태를 확인하고 있습니다..." fullPage />
   }
 
   if (user) return <Navigate to="/dashboard" replace />
@@ -62,7 +64,7 @@ function SignupPage() {
             비밀번호 확인
             <input className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:border-blue-500" type="password" placeholder="비밀번호를 다시 입력하세요" value={passwordConfirmation} onChange={(event) => setPasswordConfirmation(event.target.value)} required autoComplete="new-password" />
           </label>
-          {error && <p className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700" role="alert">{error}</p>}
+          {error && <ErrorState message={error} compact />}
           <button className="w-full rounded-xl bg-blue-600 px-4 py-3 font-semibold text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60" type="submit" disabled={isSubmitting}>
             {isSubmitting ? "가입 중..." : "회원가입"}
           </button>

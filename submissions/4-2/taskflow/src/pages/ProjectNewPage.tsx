@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router"
+import ErrorState from "../components/ErrorState"
 import PageHeader from "../components/PageHeader"
 import { useAuth } from "../contexts/useAuth"
 import { getErrorMessage } from "../lib/errors"
@@ -66,7 +67,7 @@ function ProjectNewPage() {
             {colors.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
           </select>
         </label>
-        {error && <p className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700" role="alert">{error}</p>}
+        {error && <ErrorState message={error} compact />}
         <div className="flex justify-end gap-3 pt-2">
           <Link className="rounded-xl border border-slate-300 px-4 py-3 font-semibold text-slate-700 hover:border-slate-400" to="/projects">취소</Link>
           <button className="rounded-xl bg-blue-600 px-4 py-3 font-semibold text-white hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60" type="submit" disabled={isSubmitting}>{isSubmitting ? "저장 중..." : "저장"}</button>

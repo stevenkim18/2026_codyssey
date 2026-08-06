@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react"
 import { Link, useNavigate, useParams } from "react-router"
+import ErrorState from "../components/ErrorState"
 import PageHeader from "../components/PageHeader"
 import StatusBadge from "../components/StatusBadge"
 import EmptyState from "../components/EmptyState"
+import LoadingState from "../components/LoadingState"
 import { getErrorMessage } from "../lib/errors"
 import { deleteTask, getTaskById } from "../lib/taskApi"
 import type { Task } from "../types/database"
@@ -53,8 +55,8 @@ function TaskDetailPage() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-10">
       <PageHeader eyebrow="Task" title={task?.title ?? "할 일 상세"} action={task && <Link className="rounded-xl bg-slate-900 px-4 py-3 font-semibold text-white hover:bg-slate-700" to={`/tasks/${id}/edit`}>수정</Link>} />
-      {error && <p className="mb-6 rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700" role="alert">{error}</p>}
-      {isLoading ? <div className="rounded-2xl border border-slate-200 bg-white px-6 py-12 text-center text-sm text-slate-500">할 일을 불러오고 있습니다...</div> : task ? <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      {error && <div className="mb-6"><ErrorState message={error} compact /></div>}
+      {isLoading ? <LoadingState message="할 일을 불러오고 있습니다..." /> : task ? <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
         <div className="flex flex-wrap gap-2"><StatusBadge type="status" value={task.status} /><StatusBadge type="priority" value={task.priority} /></div>
         <h2 className="mt-5 text-2xl font-bold text-slate-950">{task.title}</h2>
         <p className="mt-3 whitespace-pre-wrap text-slate-500">{task.description || "상세 설명이 없습니다."}</p>

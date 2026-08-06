@@ -1,41 +1,15 @@
-import { useEffect, useState } from "react"
 import { Link } from "react-router"
 import EmptyState from "../components/EmptyState"
+import ErrorState from "../components/ErrorState"
+import LoadingState from "../components/LoadingState"
 import PageHeader from "../components/PageHeader"
 import ProjectCard from "../components/ProjectCard"
-import { getErrorMessage } from "../lib/errors"
-import { getProjects } from "../lib/projectApi"
-import { getTasks } from "../lib/taskApi"
-import type { Project, Task } from "../types/database"
+import { useAuth } from "../contexts/useAuth"
+import { useProjects } from "../hooks/useProjects"
 
 function ProjectListPage() {
-  const [projects, setProjects] = useState<Project[]>([])
-  const [tasks, setTasks] = useState<Task[]>([])
-  const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState("")
-
-  useEffect(() => {
-    let isMounted = true
-
-    async function loadProjects() {
-      try {
-        const [projectData, taskData] = await Promise.all([getProjects(), getTasks()])
-        if (isMounted) {
-          setProjects(projectData)
-          setTasks(taskData)
-        }
-      } catch (requestError) {
-        if (isMounted) setError(getErrorMessage(requestError))
-      } finally {
-        if (isMounted) setIsLoading(false)
-      }
-    }
-
-    void loadProjects()
-    return () => {
-      isMounted = false
-    }
-  }, [])
+  const { user } = useAuth()
+  const { projects, tasks, isLoading, error, reload } = useProjects(user?.id)
 
   const taskCounts = tasks.reduce<Record<string, number>>((counts, task) => {
     counts[task.project_id] = (counts[task.project_id] ?? 0) + 1
@@ -50,9 +24,9 @@ function ProjectListPage() {
         description="목표별로 할 일을 묶어 관리해보세요."
         action={<Link className="rounded-xl bg-blue-600 px-4 py-3 font-semibold text-white hover:bg-blue-700" to="/projects/new">새 프로젝트</Link>}
       />
-      {error && <p className="mb-6 rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700" role="alert">{error}</p>}
+      {error && <div className="mb-6"><ErrorState message={error} onRetry={reload} /></div>}
       {isLoading ? (
-        <div className="rounded-2xl border border-slate-200 bg-white px-6 py-12 text-center text-sm text-slate-500">프로젝트를 불러오고 있습니다...</div>
+        <LoadingState message="프로젝트를 불러오고 있습니다..." />
       ) : projects.length === 0 ? (
         <EmptyState
           title="아직 프로젝트가 없습니다."

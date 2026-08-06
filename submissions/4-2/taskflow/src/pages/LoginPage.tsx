@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { Link, Navigate, useLocation, useNavigate, useSearchParams } from "react-router"
+import ErrorState from "../components/ErrorState"
+import LoadingState from "../components/LoadingState"
 import { useAuth } from "../contexts/useAuth"
 import { getErrorMessage } from "../lib/errors"
 
@@ -16,7 +18,7 @@ function LoginPage() {
   const signupComplete = searchParams.get("signup") === "complete"
 
   if (isLoading) {
-    return <div className="flex min-h-[calc(100vh-73px)] items-center justify-center text-sm text-slate-500">로그인 상태를 확인하고 있습니다...</div>
+    return <LoadingState message="로그인 상태를 확인하고 있습니다..." fullPage />
   }
 
   if (user) return <Navigate to="/dashboard" replace />
@@ -52,7 +54,7 @@ function LoginPage() {
             비밀번호
             <input className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:border-blue-500" type="password" placeholder="••••••••" value={password} onChange={(event) => setPassword(event.target.value)} required autoComplete="current-password" />
           </label>
-          {error && <p className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700" role="alert">{error}</p>}
+          {error && <ErrorState message={error} compact />}
           <button className="w-full rounded-xl bg-slate-900 px-4 py-3 font-semibold text-white transition hover:bg-slate-700 disabled:cursor-not-allowed disabled:opacity-60" type="submit" disabled={isSubmitting}>
             {isSubmitting ? "로그인 중..." : "로그인"}
           </button>

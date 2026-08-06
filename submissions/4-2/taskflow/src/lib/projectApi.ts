@@ -58,6 +58,15 @@ export async function updateProject(id: string, input: ProjectInput) {
   return data as Project
 }
 
+export async function deleteProject(id: string) {
+  const { error } = await supabase
+    .from("projects")
+    .delete()
+    .eq("id", id)
+
+  if (error) throw error
+}
+
 export async function archiveProject(id: string) {
   const { error } = await supabase
     .from("projects")

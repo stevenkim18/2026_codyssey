@@ -1,4 +1,5 @@
 import { Navigate, Outlet, useLocation } from "react-router"
+import LoadingState from "./LoadingState"
 import { useAuth } from "../contexts/useAuth"
 
 function ProtectedRoute() {
@@ -6,7 +7,7 @@ function ProtectedRoute() {
   const location = useLocation()
 
   if (isLoading) {
-    return <div className="flex min-h-[calc(100vh-73px)] items-center justify-center text-sm text-slate-500">인증 상태를 확인하고 있습니다...</div>
+    return <LoadingState message="인증 상태를 확인하고 있습니다..." fullPage />
   }
 
   if (!user) {

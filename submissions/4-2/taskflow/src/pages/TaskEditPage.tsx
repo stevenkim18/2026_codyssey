@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link, useNavigate, useParams } from "react-router"
+import ErrorState from "../components/ErrorState"
+import LoadingState from "../components/LoadingState"
 import PageHeader from "../components/PageHeader"
 import { getErrorMessage } from "../lib/errors"
 import { getTaskById, updateTask } from "../lib/taskApi"
@@ -77,7 +79,7 @@ function TaskEditPage() {
   return (
     <main className="mx-auto max-w-2xl px-6 py-10">
       <PageHeader eyebrow={`Task ${id ?? ""}`} title="할 일 수정" description="상태와 우선순위를 포함한 할 일 정보를 수정합니다." />
-      {isLoading ? <div className="rounded-2xl border border-slate-200 bg-white px-6 py-12 text-center text-sm text-slate-500">할 일을 불러오고 있습니다...</div> : <form className="space-y-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm" onSubmit={(event) => void handleSubmit(event)}>
+      {isLoading ? <LoadingState message="할 일을 불러오고 있습니다..." /> : <form className="space-y-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm" onSubmit={(event) => void handleSubmit(event)}>
         <label className="block text-sm font-medium text-slate-700">
           제목
           <input className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:border-blue-500" value={title} onChange={(event) => setTitle(event.target.value)} required />
@@ -108,7 +110,7 @@ function TaskEditPage() {
           마감일
           <input className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:border-blue-500" type="date" value={dueDate} onChange={(event) => setDueDate(event.target.value)} />
         </label>
-        {error && <p className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700" role="alert">{error}</p>}
+        {error && <ErrorState message={error} compact />}
         <div className="flex justify-end gap-3"><Link className="rounded-xl border border-slate-300 px-4 py-3 font-semibold text-slate-700" to={`/tasks/${id}`}>취소</Link><button className="rounded-xl bg-blue-600 px-4 py-3 font-semibold text-white hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60" type="submit" disabled={isSubmitting}>{isSubmitting ? "저장 중..." : "저장"}</button></div>
       </form>}
     </main>
