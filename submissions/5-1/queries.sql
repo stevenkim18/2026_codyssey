@@ -71,6 +71,15 @@ LEFT JOIN tasks AS t ON t.project_id = p.id
 GROUP BY p.id, p.name
 ORDER BY task_count DESC, p.id ASC;
 
+SELECT
+    p.id AS project_id,
+    p.name AS project_name,
+    COUNT(t.id) AS task_count
+FROM projects AS p
+INNER JOIN tasks AS t ON t.project_id = p.id
+GROUP BY p.id, p.name
+ORDER BY task_count DESC, p.id ASC;
+
 -- Q09. 회원별 담당 할 일 수와 완료한 할 일 수를 집계한다. (COUNT, SUM, GROUP BY)
 SELECT
     m.id AS member_id,
