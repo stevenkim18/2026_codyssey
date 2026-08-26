@@ -1,3 +1,6 @@
 __pycache__/
 *.py[cod]
-data/
+data/*
+!data/categories.jsonl
+!data/transactions.jsonl
+!data/budgets.jsonl

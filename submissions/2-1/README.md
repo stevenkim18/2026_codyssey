@@ -18,6 +18,14 @@ python -m budget_app list --data-dir ./my-data
 
 첫 실행 시 `data` 폴더와 `transactions.jsonl`, `categories.jsonl`, `budgets.jsonl` 파일이 생성됩니다. 카테고리에는 `food`, `transport`, `rent`, `salary`, `etc`가 자동 등록됩니다.
 
+제출본에는 바로 확인할 수 있도록 2024년 1~2월의 예제 거래 10건과 월별 예산을 넣어 두었습니다. 예를 들어 아래 명령을 실행해 볼 수 있습니다.
+
+```bash
+python -m budget_app list --limit 3
+python -m budget_app summary --month 2024-01 --top 3
+python -m budget_app search --from 2024-01-01 --to 2024-01-31
+```
+
 ## 명령 예시
 
 ```bash
