@@ -1,0 +1,8 @@
+date,type,category,amount,memo,tags
+2024-01-10,income,food,100000,,tag
+2024-01-20,expense,culture,18000,영화 관람,"movie,weekend"
+2024-01-15,income,etc,180000,프로젝트 보상,side-job
+2024-01-10,expense,transport,65000,대중교통 충전,commute
+2024-01-08,expense,food,12500,점심 식사,"meal,lunch"
+2024-01-03,expense,rent,450000,1월 월세,fixed
+2024-01-02,income,salary,3200000,1월 급여,salary

@@ -7,7 +7,9 @@
 {"id": "TX-000007", "date": "2024-02-01", "type": "income", "amount": 3200000, "category": "salary", "memo": "2월 급여", "tags": ["salary"], "created_at": "2024-02-01T09:00:00"}
 {"id": "TX-000008", "date": "2024-02-05", "type": "expense", "amount": 520000, "category": "rent", "memo": "2월 월세", "tags": ["fixed"], "created_at": "2024-02-05T10:00:00"}
 {"id": "TX-000010", "date": "2024-02-29", "type": "expense", "amount": 4800, "category": "transport", "memo": "버스 이용", "tags": ["commute"], "created_at": "2024-02-29T08:40:00"}
-{"id": "TX-000011", "date": "2024-10-01", "type": "expense", "amount": 35000, "category": "food", "memo": "헬스장 1개월", "tags": ["meal"], "created_at": "2026-08-26T15:29:47"}
+{"id": "TX-000011", "date": "2024-10-01", "type": "expense", "amount": 40000, "category": "food", "memo": "수영장", "tags": ["meal"], "created_at": "2026-08-26T15:29:47"}
 {"id": "TX-000012", "date": "2024-02-29", "type": "expense", "amount": 4800, "category": "transport", "memo": "버스 이용", "tags": ["commute"], "created_at": "2026-08-26T15:32:57"}
 {"id": "TX-000013", "date": "2024-02-05", "type": "expense", "amount": 520000, "category": "rent", "memo": "2월 월세", "tags": ["fixed"], "created_at": "2026-08-26T15:32:57"}
 {"id": "TX-000014", "date": "2024-02-01", "type": "income", "amount": 3200000, "category": "salary", "memo": "2월 급여", "tags": ["salary"], "created_at": "2026-08-26T15:32:57"}
+{"id": "TX-000015", "date": "2024-10-02", "type": "income", "amount": 500000, "category": "salary", "memo": "", "tags": ["tag"], "created_at": "2026-08-27T13:49:41"}
+{"id": "TX-000016", "date": "2024-01-10", "type": "income", "amount": 100000, "category": "food", "memo": "", "tags": ["tag"], "created_at": "2026-08-27T14:01:41"}
