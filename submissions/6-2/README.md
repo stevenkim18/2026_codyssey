@@ -51,6 +51,34 @@ python submissions/6-2/main.py commit --help
 
 CLI의 `--max-tokens`는 과제에서 이해하기 쉬운 이름으로 유지하고, OpenAI 요청에는 현재 권장되는 `max_completion_tokens` 필드로 보낸다. 한 명령은 변경사항이 있을 때 AI API를 최대 1회 호출한다.
 
+## API 파라미터와 결과 품질
+
+AI 결과의 품질은 모델과 파라미터뿐 아니라 프롬프트에 전달하는 Git status, diff, 출력 형식의 영향을 함께 받는다. 파라미터를 조절해도 입력 diff가 잘못되었거나 프롬프트에 필요한 맥락이 없으면 좋은 결과를 얻기 어렵다.
+
+| 파라미터 | 결과에 미치는 영향 | 이 프로젝트의 선택 |
+|---|---|---|
+| `model` | 지시 이해 능력, 요약 품질, 응답 속도와 비용에 영향을 준다. | 기본값은 `gpt-4.1-mini`이며 `--model`로 변경할 수 있다. |
+| `temperature` | 출력의 무작위성을 조절한다. 낮으면 표현이 집중되고 결과가 일정해지며, 높으면 표현이 다양해지지만 결과가 흔들릴 수 있다. | 형식과 일관성이 중요한 커밋·PR 생성을 위해 기본값을 `0.2`로 둔다. |
+| `max_tokens` | 생성할 수 있는 최대 출력 길이를 제한한다. 너무 작으면 본문이 잘릴 수 있고, 크게 설정해도 내용의 정확성이 자동으로 좋아지지는 않는다. | CLI에서는 `--max-tokens`로 받고, API에는 `max_completion_tokens`로 전달한다. 기본값은 `600`이다. |
+| `messages`와 프롬프트 | AI가 참고할 변경 파일, diff, 작성 규칙을 결정한다. 결과 품질에 가장 직접적인 영향을 주는 입력이다. | status·diff와 커밋/PR 템플릿을 함께 전달한다. |
+| `top_p` | temperature와 비슷하게 선택할 토큰 범위를 조절하는 대안이다. 일반적으로 두 값을 동시에 조절하지 않는다. | 이 도구에서는 혼란을 줄이기 위해 제공하지 않고 `temperature`만 사용한다. |
+
+OpenAI 공식 문서에서는 `temperature`를 0~2 범위로 설명하며, 낮은 값은 더 집중된 결과를 만들고 높은 값은 더 무작위적인 결과를 만든다고 안내한다. 또한 현재 Chat Completions API에서는 `max_tokens`보다 `max_completion_tokens` 사용이 권장된다. [Chat Completions API 공식 문서](https://developers.openai.com/api/reference/cli/resources/chat/subresources/completions/methods/create)
+
+`--safe-mode`는 생성 파라미터는 아니지만 결과 품질과 보안 사이의 trade-off가 있다. 민감정보를 마스킹하고 diff를 줄이면 안전성은 높아지지만, AI가 참고할 수 있는 변경 맥락이 줄어들어 요약 품질이 낮아질 수 있다.
+
+### 파라미터 비교 실습
+
+같은 Git 변경사항을 대상으로 다음 명령을 실행하고 제목의 일관성, 표현의 다양성, 본문이 잘리는지를 비교한다.
+
+```bash
+python submissions/6-2/main.py commit --temperature 0.2 --max-tokens 600
+python submissions/6-2/main.py commit --temperature 1.0 --max-tokens 600
+python submissions/6-2/main.py commit --temperature 0.2 --max-tokens 30
+```
+
+`temperature`가 높다고 항상 더 좋은 결과가 나오는 것은 아니며, 같은 입력에서도 모델의 결과가 매번 달라질 수 있다. 이 도구에서는 반복 실행 횟수와 비용을 줄이기 위해 커밋·PR 명령마다 API 호출을 1회로 제한한다.
+
 ## 동작 흐름
 
 1. `git status --short`로 변경 파일과 상태를 수집한다.
