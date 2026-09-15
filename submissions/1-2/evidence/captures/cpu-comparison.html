@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>subject1-2 CPU evidence</title>
+<style>
+body{margin:0;background:#10151b;color:#d9e2ec;font:16px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace}
+main{padding:34px;max-width:1500px;margin:auto} h1{color:#8bd5ff;font-size:25px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.panel{border:1px solid #425466;border-radius:8px;padding:20px;background:#18212b}
+h2{font-size:19px;color:#ffd580;margin-top:0} pre{white-space:pre-wrap}.ok{color:#9be28f}.critical{color:#ff8f8f}.muted{color:#9aaabd}.footer{margin-top:22px;color:#9aaabd;font-size:13px}
+</style>
+</head>
+<body><main>
+<h1>$ subject1-2 CPU evidence -- ps/top/docker stats + application.log</h1>
+<div class="grid">
+<section class="panel"><h2>Before / CPU_MAX_OCCUPY=10</h2><pre>$ ps -L -p 14
+PID TID STAT %CPU WCHAN
+14  14  SNl  4.0  do_select
+
+$ docker stats --no-stream
+CPU=4.27% MEM=511.2MiB / 1GiB
+
+$ application.log
+[CpuWorker] Maximum CPU Limit: 10%
+[CpuWorker] Current Load: 5.00%
+[CpuWorker] Peak reached (10.00%)
+[CpuWorker] Cooldown complete (5.00%)
+[CpuWorker] Current Load: 9.20%</pre><p class="ok">cooldown 반복, 35초 관찰 후 harness stop</p></section>
+<section class="panel"><h2>After / CPU_MAX_OCCUPY=100</h2><pre>$ ps -L -p 8
+PID TID STAT %CPU WCHAN
+8   8   SN   7.0  do_select
+...
+8   8   SN   1.1  do_select
+
+$ docker stats --no-stream
+CPU=5.22% MEM=9.938MiB / 1GiB
+
+$ application.log
+[CpuWorker] Current Load: 13.16%
+[CpuWorker] Current Load: 36.14%
+[CpuWorker] Current Load: 50.99%
+[CpuWorker] CPU Threshold Violated!
+(50.99%)</pre><p class="critical">약 27초 후 ExitCode=143, OOMKilled=false</p></section>
+</div>
+<p class="footer">원본: evidence/cpu/before/20260915-141452-66829 및 evidence/cpu/after/20260915-141620-67680</p>
+</main></body></html>

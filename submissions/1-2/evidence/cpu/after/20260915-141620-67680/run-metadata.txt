@@ -1,0 +1,11 @@
+case=cpu
+phase=after
+requested_value=100
+MEMORY_LIMIT=512
+CPU_MAX_OCCUPY=100
+MULTI_THREAD_ENABLE=false
+max_seconds=40
+monitor_interval_sec=2
+host_architecture=arm64
+docker_server=29.6.1 aarch64
+binary=/Users/seungwookim/Code/edu/Codyssey/2026_codyssey/submissions/1-2/docker/app/agent-app-linux-arm64: ELF 64-bit LSB executable, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-aarch64.so.1, for GNU/Linux 3.7.0, BuildID[sha1]=405a6ae12532efa2eb0c6a479a4a97eb33d24fba, stripped

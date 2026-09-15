@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>subject1-2 Deadlock evidence</title>
+<style>
+body{margin:0;background:#10151b;color:#d9e2ec;font:16px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace}
+main{padding:34px;max-width:1500px;margin:auto} h1{color:#8bd5ff;font-size:25px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.panel{border:1px solid #425466;border-radius:8px;padding:20px;background:#18212b}
+h2{font-size:19px;color:#ffd580;margin-top:0} pre{white-space:pre-wrap}.ok{color:#9be28f}.critical{color:#ff8f8f}.muted{color:#9aaabd}.footer{margin-top:22px;color:#9aaabd;font-size:13px}
+</style>
+</head>
+<body><main>
+<h1>$ subject1-2 Deadlock evidence -- ps/top -H/ps -L + logs</h1>
+<div class="grid">
+<section class="panel"><h2>Before / MULTI_THREAD_ENABLE=true</h2><pre>$ ps -ef
+agent-admin 7 1 /opt/agent/agent-app-linux-arm64
+agent-admin 8 7 /opt/agent/agent-app-linux-arm64
+
+$ top -H -p 8
+Threads: 3 total, 0 running, 3 sleeping
+
+$ ps -L -p 8
+TID STAT %CPU WCHAN
+8   SNl  0.0  futex_wait_queue
+166 SNl  0.0  futex_wait_queue
+167 SNl  0.0  futex_wait_queue
+
+$ application.log
+Thread-1 LOCK ACQUIRED: Shared_Memory_A
+Thread-2 LOCK ACQUIRED: Socket_Pool_B
+Thread-1 WAITING for Socket_Pool_B (BLOCKED)
+Thread-2 WAITING for Shared_Memory_A (BLOCKED)</pre><p class="critical">PID 유지, RSS 16.5MB 고정, 로그 진행 정지</p></section>
+<section class="panel"><h2>After / MULTI_THREAD_ENABLE=false</h2><pre>$ ps -ef
+agent-admin 7 1 /opt/agent/agent-app-linux-arm64
+agent-admin 8 7 /opt/agent/agent-app-linux-arm64
+
+$ top -H -p 8
+Threads: 3 total, 0 running, 3 sleeping
+
+$ application.log
+[Scheduler] Starting task execution...
+[Scheduler] All tasks completed.
+[CpuWorker] Maximum CPU Limit: 10%
+[CpuWorker] Current Load: 5.55%
+
+$ monitor.sh
+PID:8 CPU:0.6% RSS:491.7MB PORT:15034</pre><p class="ok">정상 Scheduler 완료 및 워커 로그 진행, 관찰 후 harness stop</p></section>
+</div>
+<p class="footer">원본: evidence/deadlock/before/20260915-140644-64188 및 evidence/deadlock/after/20260915-141042-65094</p>
+</main></body></html>

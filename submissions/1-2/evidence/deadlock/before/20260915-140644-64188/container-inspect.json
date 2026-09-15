@@ -1,0 +1,227 @@
+[
+    {
+        "Id": "ef267201df6575201416ebe9fa49ff91b924e950c09f028872843abd7c630682",
+        "Created": "2026-09-15T05:06:47.251134843Z",
+        "Path": "/opt/agent/agent-app-linux-arm64",
+        "Args": [],
+        "State": {
+            "Status": "exited",
+            "Running": false,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 0,
+            "ExitCode": 143,
+            "Error": "",
+            "StartedAt": "2026-09-15T05:06:47.299505968Z",
+            "FinishedAt": "2026-09-15T05:08:10.840483298Z"
+        },
+        "Image": "sha256:c1925f4dec1fb18d6f848678f1127dc4ba09823a52b6701848713cf8dc30cdb1",
+        "ResolvConfPath": "/var/lib/docker/containers/ef267201df6575201416ebe9fa49ff91b924e950c09f028872843abd7c630682/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/ef267201df6575201416ebe9fa49ff91b924e950c09f028872843abd7c630682/hostname",
+        "HostsPath": "/var/lib/docker/containers/ef267201df6575201416ebe9fa49ff91b924e950c09f028872843abd7c630682/hosts",
+        "LogPath": "/var/lib/docker/containers/ef267201df6575201416ebe9fa49ff91b924e950c09f028872843abd7c630682/ef267201df6575201416ebe9fa49ff91b924e950c09f028872843abd7c630682-json.log",
+        "Name": "/codyssey-agent-deadlock-before-20260915-140644-64188",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "codyssey-subject1-2_default",
+            "PortBindings": {
+                "15034/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "15034"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 1073741824,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 2147483648,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ],
+            "Init": true
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "ef267201df65",
+            "Domainname": "",
+            "User": "agent-admin",
+            "AttachStdin": true,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "15034/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": true,
+            "StdinOnce": true,
+            "Env": [
+                "AGENT_KEY_PATH=/opt/agent/api_keys",
+                "AGENT_LOG_DIR=/var/log/agent-app",
+                "AGENT_PORT=15034",
+                "AGENT_UPLOAD_DIR=/opt/agent/upload_files",
+                "AGENT_HOME=/opt/agent",
+                "CPU_MAX_OCCUPY=10",
+                "MULTI_THREAD_ENABLE=true",
+                "MEMORY_LIMIT=512",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive"
+            ],
+            "Cmd": null,
+            "Image": "codyssey/agent-leak-app:arm64",
+            "Volumes": null,
+            "WorkingDir": "/opt/agent",
+            "Entrypoint": [
+                "/opt/agent/agent-app-linux-arm64"
+            ],
+            "Labels": {
+                "com.docker.compose.config-hash": "27a00eeaa061083ef01217c44540cf538037ff35f68983058fe31e13c6cacdd7",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:c1925f4dec1fb18d6f848678f1127dc4ba09823a52b6701848713cf8dc30cdb1",
+                "com.docker.compose.oneoff": "True",
+                "com.docker.compose.project": "codyssey-subject1-2",
+                "com.docker.compose.project.config_files": "/Users/seungwookim/Code/edu/Codyssey/2026_codyssey/submissions/1-2/docker/compose.yaml",
+                "com.docker.compose.project.working_dir": "/Users/seungwookim/Code/edu/Codyssey/2026_codyssey/submissions/1-2/docker",
+                "com.docker.compose.service": "agent",
+                "com.docker.compose.slug": "c072651a43bd32064c7ad080eefe5d3c6ad5b508c846b77aabf2006b1db46838",
+                "com.docker.compose.version": "5.3.0",
+                "org.opencontainers.image.version": "22.04"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "",
+            "SandboxKey": "",
+            "Ports": {},
+            "Networks": {
+                "codyssey-subject1-2_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "codyssey-agent-deadlock-before-20260915-140644-64188"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "5cee2a72712ba17734424f576a07dacecda1ae1c509e8bcc4ce1c897a6a679e7",
+                    "EndpointID": "",
+                    "Gateway": "",
+                    "IPAddress": "",
+                    "MacAddress": "",
+                    "IPPrefixLen": 0,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "codyssey-agent-deadlock-before-20260915-140644-64188",
+                        "ef267201df65"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:f5e833ea0580d045f764e55ea79db2fd2d1c1c2b7a50726d3fac9111e2f1d6da",
+            "size": 1806,
+            "platform": {
+                "architecture": "arm64",
+                "os": "linux"
+            }
+        }
+    }
+]

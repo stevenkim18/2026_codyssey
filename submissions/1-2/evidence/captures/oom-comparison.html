@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>subject1-2 OOM evidence</title>
+<style>
+body{margin:0;background:#10151b;color:#d9e2ec;font:16px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace}
+main{padding:34px;max-width:1500px;margin:auto} h1{color:#8bd5ff;font-size:25px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.panel{border:1px solid #425466;border-radius:8px;padding:20px;background:#18212b}
+h2{font-size:19px;color:#ffd580;margin-top:0} pre{white-space:pre-wrap;color:#d9e2ec}
+.ok{color:#9be28f}.critical{color:#ff8f8f}.muted{color:#9aaabd}.footer{margin-top:22px;color:#9aaabd;font-size:13px}
+</style>
+</head>
+<body><main>
+<h1>$ subject1-2 OOM evidence -- monitor.sh + application.log</h1>
+<div class="grid">
+<section class="panel"><h2>Before / MEMORY_LIMIT=128</h2><pre>$ id
+uid=10001(agent-admin) gid=10001(agent-admin)
+
+$ /opt/agent/bin/monitor.sh
+[05:00:35] PROCESS:agent-app-linux-arm64 PID:8
+CPU:0.3% RSS:141.5MB STAT:SN PORT:15034
+
+$ tail -n4 application.log
+[MemoryWorker] Current Heap: 150MB
+[MemoryGuard] Memory limit exceeded
+(150MB &gt;= 128MB)
+[MemoryGuard] Self-terminating process 8
+to prevent system instability.</pre><p class="critical">Status=exited, ExitCode=137, OOMKilled=false</p></section>
+<section class="panel"><h2>After / MEMORY_LIMIT=512</h2><pre>$ id
+uid=10001(agent-admin) gid=10001(agent-admin)
+
+$ /opt/agent/bin/monitor.sh
+[05:03:16] PROCESS:agent-app-linux-arm64 PID:8
+CPU:0.5% RSS:516.7MB STAT:SNl PORT:15034
+[05:03:23] PROCESS:agent-app-linux-arm64 PID:8
+CPU:0.5% RSS:66.7MB STAT:SNl PORT:15034
+
+$ application.log
+[MemoryWorker] Current Heap: 525MB
+[MemoryWorker] Starting cleanup...
+[MemoryWorker] Current Heap: 25MB</pre><p class="ok">정리 후 메모리 회복, 관찰 종료까지 생존</p></section>
+</div>
+<p class="footer">원본: evidence/oom/before/20260915-140016-61131 및 evidence/oom/after/20260915-140104-61678</p>
+</main></body></html>
