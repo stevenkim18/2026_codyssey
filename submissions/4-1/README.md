@@ -14,6 +14,11 @@
 - Vanilla JavaScript (DOM API, 이벤트, `fetch`, `async/await`, Intersection Observer)
 - GitHub REST API
 
+## 디자인 기준
+
+- [`DESIGN.md`](DESIGN.md): `npx getdesign@latest add apple`로 가져온 Apple 디자인 분석을 참고했습니다. Apple의 공식 디자인 시스템 문서는 아닙니다.
+- 흰색/연회색과 어두운 섹션의 대비, 시스템 글꼴, 파란색 액션 버튼, 여백 중심의 구성을 포트폴리오에 맞게 적용했습니다. 과제의 다크 모드와 카드 그림자 요구사항을 고려해 원본 분석을 그대로 복제하지는 않았습니다.
+
 ## 설명 자료
 
 - [프로젝트 개요와 평가 준비](docs/00-project-overview.md)
@@ -39,6 +44,21 @@
 VS Code에서 `submissions/4-1` 폴더를 열고 Live Server로 `index.html`을 실행합니다. GitHub API는 브라우저에서 호출되므로 인터넷 연결이 필요합니다.
 
 ## 화면 미리보기
+
+### 디자인 개선 비교 (2026-09-16)
+
+같은 데스크톱/모바일 화면 크기에서 첫 화면을 캡처했습니다. 왼쪽은 현재 GitHub Pages에 배포된 기존 디자인이고, 오른쪽은 `DESIGN.md`를 적용한 로컬 수정본입니다. **오른쪽 디자인은 아직 배포되지 않았습니다.**
+
+| 화면 | 배포본 (개선 전) | 로컬 수정본 (개선 후) |
+| --- | --- | --- |
+| 데스크톱 | ![배포본 데스크톱](images/comparison/before-desktop.png) | ![로컬 수정본 데스크톱](images/comparison/after-desktop.png) |
+| 모바일 | ![배포본 모바일](images/comparison/before-mobile.png) | ![로컬 수정본 모바일](images/comparison/after-mobile.png) |
+
+주요 변화: 베이지/연두색 중심의 장식적 화면을 흰색·연회색 캔버스와 파란색 액션 컬러로 단순화하고, 헤더와 프로필 카드를 더 절제된 형태로 정리했습니다.
+
+### 기존 제출 캡처
+
+아래 이미지는 디자인 개선 전 제출 당시 캡처입니다.
 
 ![데스크톱 화면](images/desktop.png)
 
