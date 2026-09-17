@@ -1,0 +1,149 @@
+
+=== initial ===
+2026-09-15T14:58:39+0900
+--- identity ---
+uid=10001(agent-admin) gid=10001(agent-admin) groups=10001(agent-admin)
+--- monitor.sh ---
+[2026-09-15 05:58:39] PROCESS:agent-app-linux-arm64 PID:7 PPID:1 ETIME:00:01 CPU:6.0% MEM:0.0% RSS:1.6MB RSS_KB:1636 VSZ_KB:2600 STAT:S PORT:15034
+[2026-09-15 05:58:39] PROCESS:agent-app-linux-arm64 PID:8 PPID:7 ETIME:00:00 CPU:0.0% MEM:0.2% RSS:16.4MB RSS_KB:16844 VSZ_KB:22144 STAT:SN PORT:15034
+--- ps -ef ---
+UID        PID  PPID  C STIME TTY          TIME CMD
+agent-a+     1     0  1 05:58 ?        00:00:00 /sbin/docker-init -- /opt/agent/agent-app-linux-arm64
+agent-a+     7     1  6 05:58 ?        00:00:00 /opt/agent/agent-app-linux-arm64
+agent-a+     8     7  0 05:58 ?        00:00:00 /opt/agent/agent-app-linux-arm64
+agent-a+    43     0  0 05:58 ?        00:00:00 ps -ef
+--- ps process PID=7 ---
+  PID  PPID     ELAPSED %CPU %MEM   RSS    VSZ STAT CMD
+    7     1       00:01  6.0  0.0  1636   2600 S    /opt/agent/agent-app-linux-arm64
+--- top -H PID=7 ---
+top - 05:58:39 up  1:45,  0 users,  load average: 0.00, 0.00, 0.00
+Threads:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7936.0 total,   6765.0 free,    473.5 used,    697.6 buff/cache
+MiB Swap:   1024.0 total,   1024.0 free,      0.0 used.   7301.7 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+    7 agent-a+  20   0    2600   1636   1424 S   0.0   0.0   0:00.06 agent-app+
+--- ps -L PID=7 ---
+  PID   TID STAT %CPU %MEM WCHAN                            COMMAND
+    7     7 S     6.0  0.0 do_wait                          agent-app-linux
+--- ps process PID=8 ---
+  PID  PPID     ELAPSED %CPU %MEM   RSS    VSZ STAT CMD
+    8     7       00:00  0.0  0.2 16844  22144 SN   /opt/agent/agent-app-linux-arm64
+--- top -H PID=8 ---
+top - 05:58:40 up  1:45,  0 users,  load average: 0.00, 0.00, 0.00
+Threads:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7936.0 total,   6775.0 free,    463.4 used,    697.6 buff/cache
+MiB Swap:   1024.0 total,   1024.0 free,      0.0 used.   7311.7 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+    8 agent-a+  30  10   22144  16844   8572 S   0.0   0.2   0:00.03 agent-app+
+--- ps -L PID=8 ---
+  PID   TID STAT %CPU %MEM WCHAN                            COMMAND
+    8     8 SN    0.0  0.2 do_select                        agent-app-linux
+--- docker stats ---
+NAME=codyssey-agent-oom-before-20260915-145834-81749 CPU=0.01% MEM=9.672MiB / 1GiB MEM_PERC=0.94% PIDS=3
+
+=== t+5s ===
+2026-09-15T14:58:46+0900
+--- identity ---
+uid=10001(agent-admin) gid=10001(agent-admin) groups=10001(agent-admin)
+--- monitor.sh ---
+[2026-09-15 05:58:46] PROCESS:agent-app-linux-arm64 PID:7 PPID:1 ETIME:00:08 CPU:0.7% MEM:0.0% RSS:1.6MB RSS_KB:1636 VSZ_KB:2600 STAT:S PORT:15034
+[2026-09-15 05:58:46] PROCESS:agent-app-linux-arm64 PID:8 PPID:7 ETIME:00:07 CPU:0.8% MEM:0.8% RSS:66.5MB RSS_KB:68052 VSZ_KB:73352 STAT:SN PORT:15034
+--- ps -ef ---
+UID        PID  PPID  C STIME TTY          TIME CMD
+agent-a+     1     0  0 05:58 ?        00:00:00 /sbin/docker-init -- /opt/agent/agent-app-linux-arm64
+agent-a+     7     1  0 05:58 ?        00:00:00 /opt/agent/agent-app-linux-arm64
+agent-a+     8     7  0 05:58 ?        00:00:00 /opt/agent/agent-app-linux-arm64
+agent-a+   118     0  0 05:58 ?        00:00:00 ps -ef
+--- ps process PID=7 ---
+  PID  PPID     ELAPSED %CPU %MEM   RSS    VSZ STAT CMD
+    7     1       00:08  0.7  0.0  1636   2600 S    /opt/agent/agent-app-linux-arm64
+--- top -H PID=7 ---
+top - 05:58:47 up  1:45,  0 users,  load average: 0.00, 0.00, 0.00
+Threads:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7936.0 total,   6738.7 free,    499.6 used,    697.8 buff/cache
+MiB Swap:   1024.0 total,   1024.0 free,      0.0 used.   7275.6 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+    7 agent-a+  20   0    2600   1636   1424 S   0.0   0.0   0:00.06 agent-app+
+--- ps -L PID=7 ---
+  PID   TID STAT %CPU %MEM WCHAN                            COMMAND
+    7     7 S     0.6  0.0 do_wait                          agent-app-linux
+--- ps process PID=8 ---
+  PID  PPID     ELAPSED %CPU %MEM   RSS    VSZ STAT CMD
+    8     7       00:08  0.7  0.8 68052  73352 SN   /opt/agent/agent-app-linux-arm64
+--- top -H PID=8 ---
+top - 05:58:47 up  1:45,  0 users,  load average: 0.00, 0.00, 0.00
+Threads:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7936.0 total,   6713.2 free,    525.0 used,    697.8 buff/cache
+MiB Swap:   1024.0 total,   1024.0 free,      0.0 used.   7250.1 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+    8 agent-a+  30  10   98956  93656   8572 S   0.0   1.2   0:00.07 agent-app+
+--- ps -L PID=8 ---
+  PID   TID STAT %CPU %MEM WCHAN                            COMMAND
+    8     8 SN    0.8  1.1 do_select                        agent-app-linux
+--- docker stats ---
+NAME=codyssey-agent-oom-before-20260915-145834-81749 CPU=0.01% MEM=84.82MiB / 1GiB MEM_PERC=8.28% PIDS=3
+
+=== t+10s ===
+2026-09-15T14:58:53+0900
+--- identity ---
+uid=10001(agent-admin) gid=10001(agent-admin) groups=10001(agent-admin)
+--- monitor.sh ---
+[2026-09-15 05:58:54] PROCESS:agent-app-linux-arm64 PID:7 PPID:1 ETIME:00:15 CPU:0.4% MEM:0.0% RSS:1.6MB RSS_KB:1636 VSZ_KB:2600 STAT:S PORT:15034
+[2026-09-15 05:58:54] PROCESS:agent-app-linux-arm64 PID:8 PPID:7 ETIME:00:14 CPU:0.6% MEM:1.7% RSS:141.5MB RSS_KB:144864 VSZ_KB:150164 STAT:SN PORT:15034
+--- ps -ef ---
+UID        PID  PPID  C STIME TTY          TIME CMD
+agent-a+     1     0  0 05:58 ?        00:00:00 /sbin/docker-init -- /opt/agent/agent-app-linux-arm64
+agent-a+     7     1  0 05:58 ?        00:00:00 /opt/agent/agent-app-linux-arm64
+agent-a+     8     7  0 05:58 ?        00:00:00 /opt/agent/agent-app-linux-arm64
+agent-a+   195     0  0 05:58 ?        00:00:00 ps -ef
+--- ps process PID=7 ---
+  PID  PPID     ELAPSED %CPU %MEM   RSS    VSZ STAT CMD
+    7     1       00:15  0.4  0.0  1636   2600 S    /opt/agent/agent-app-linux-arm64
+--- top -H PID=7 ---
+top - 05:58:54 up  1:46,  0 users,  load average: 0.00, 0.00, 0.00
+Threads:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7936.0 total,   6667.4 free,    570.8 used,    697.8 buff/cache
+MiB Swap:   1024.0 total,   1024.0 free,      0.0 used.   7204.3 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+    7 agent-a+  20   0    2600   1636   1424 S   0.0   0.0   0:00.06 agent-app+
+--- ps -L PID=7 ---
+  PID   TID STAT %CPU %MEM WCHAN                            COMMAND
+    7     7 S     0.3  0.0 do_wait                          agent-app-linux
+--- ps process PID=8 ---
+  PID  PPID     ELAPSED %CPU %MEM   RSS    VSZ STAT CMD
+    8     7       00:15  0.6  1.7 144864 150164 SN  /opt/agent/agent-app-linux-arm64
+--- top -H PID=8 ---
+top - 05:58:54 up  1:46,  0 users,  load average: 0.00, 0.00, 0.00
+Threads:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7936.0 total,   6683.5 free,    554.7 used,    697.8 buff/cache
+MiB Swap:   1024.0 total,   1024.0 free,      0.0 used.   7220.4 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+    8 agent-a+  30  10  150164 144864   8572 S   0.0   1.8   0:00.09 agent-app+
+--- ps -L PID=8 ---
+  PID   TID STAT %CPU %MEM WCHAN                            COMMAND
+    8     8 SN    0.6  1.7 do_select                        agent-app-linux
+--- docker stats ---
+NAME=codyssey-agent-oom-before-20260915-145834-81749 CPU=0.01% MEM=134.9MiB / 1GiB MEM_PERC=13.18% PIDS=3
+
+=== final-after-process-exit ===
+2026-09-15T14:59:00+0900
+--- identity ---
+Error response from daemon: container fb825bbb818e43fb610c281f6aef1115ef23a0a8ac334edf8c5392042f29e1b2 is not running
+--- monitor.sh ---
+Error response from daemon: container fb825bbb818e43fb610c281f6aef1115ef23a0a8ac334edf8c5392042f29e1b2 is not running
+--- ps -ef ---
+Error response from daemon: container fb825bbb818e43fb610c281f6aef1115ef23a0a8ac334edf8c5392042f29e1b2 is not running
+--- docker stats ---
+NAME=codyssey-agent-oom-before-20260915-145834-81749 CPU=0.00% MEM=0B / 0B MEM_PERC=0.00% PIDS=0

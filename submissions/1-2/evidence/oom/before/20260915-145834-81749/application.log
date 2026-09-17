@@ -1,0 +1,37 @@
+2026-09-15T05:58:39.443216672Z >>> Starting Agent Boot Sequence...
+2026-09-15T05:58:39.443254922Z [1/6] Checking User Account               [OK]
+2026-09-15T05:58:39.443256547Z    ... Running as service user 'agent-admin' (uid=10001)
+2026-09-15T05:58:39.443257464Z [2/6] Verifying Environment Variables     [OK]
+2026-09-15T05:58:39.443258297Z    ... All required Envs correct
+2026-09-15T05:58:39.443259089Z [3/6] Checking Required Files             [OK]
+2026-09-15T05:58:39.443259881Z    ... Verified 'secret.key' with correct key string.
+2026-09-15T05:58:39.443260714Z [4/6] Checking Port Availability          [OK]
+2026-09-15T05:58:39.443261506Z    ... Port 15034 is available.
+2026-09-15T05:58:39.443262297Z [5/6] Verifying Log Permission            [OK]
+2026-09-15T05:58:39.443263089Z    ... Log directory is writable: /var/log/agent-app
+2026-09-15T05:58:39.443263922Z [6/6] Verifying Mission Environment       [OK]
+2026-09-15T05:58:39.443264714Z    ... MEMORY_LIMIT=128MB, CPU_MAX_OCCUPY=10%, MULTI_THREAD_ENABLE=False
+2026-09-15T05:58:39.443265631Z ------------------------------------------------------------
+2026-09-15T05:58:39.443268006Z All Boot Checks Passed!
+2026-09-15T05:58:39.443268797Z Agent READY
+2026-09-15T05:58:39.443269589Z 2026-09-15 05:58:39,442 [INFO] [SafetyGuard] Process priority lowered (nice=10).
+2026-09-15T05:58:39.443270506Z 2026-09-15 05:58:39,443 [INFO] Agent listening at port 15034
+2026-09-15T05:58:41.466369298Z 
+2026-09-15T05:58:41.466405382Z ==================================================
+2026-09-15T05:58:41.466408340Z  [ Agent Initiate ] Resource Check 
+2026-09-15T05:58:41.466409423Z ==================================================
+2026-09-15T05:58:41.466410548Z  [ MEMORY ] Limit: 128MB 		[ WARNING: Recommend Over 256MB ]
+2026-09-15T05:58:41.466411798Z  [ CPU    ] Limit: 10%  		[ OK ]
+2026-09-15T05:58:41.466412757Z  [ THREAD ] Concurrency: False 		[ OK ]
+2026-09-15T05:58:41.466413715Z --------------------------------------------------
+2026-09-15T05:58:41.466414632Z  >>> SYSTEM STATUS: STABLE. STARTING WORKLOAD MONITORING...
+2026-09-15T05:58:41.466415673Z ==================================================
+2026-09-15T05:58:41.466416590Z 
+2026-09-15T05:58:41.466417465Z 2026-09-15 05:58:41,465 [INFO] [MemoryWorker] Current Heap: 25MB
+2026-09-15T05:58:44.501696300Z 2026-09-15 05:58:44,500 [INFO] [MemoryWorker] Current Heap: 50MB
+2026-09-15T05:58:47.525701426Z 2026-09-15 05:58:47,524 [INFO] [MemoryWorker] Current Heap: 75MB
+2026-09-15T05:58:50.559019219Z 2026-09-15 05:58:50,558 [INFO] [MemoryWorker] Current Heap: 100MB
+2026-09-15T05:58:53.591696096Z 2026-09-15 05:58:53,590 [INFO] [MemoryWorker] Current Heap: 125MB
+2026-09-15T05:58:56.619337250Z 2026-09-15 05:58:56,618 [INFO] [MemoryWorker] Current Heap: 150MB
+2026-09-15T05:58:56.619433333Z 2026-09-15 05:58:56,619 [CRITICAL] [MemoryGuard] Memory limit exceeded (150MB >= 128MB) / (Recommend Over 256MB)
+2026-09-15T05:58:56.619438250Z 2026-09-15 05:58:56,619 [CRITICAL] [MemoryGuard] Self-terminating process 8 to prevent system instability.
