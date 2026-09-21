@@ -1,0 +1,58 @@
+ Image codyssey/agent-leak-app:arm64 Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 674B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.34kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:22.04
+#3 DONE 0.7s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/8] FROM docker.io/library/ubuntu:22.04@sha256:b8b6ee6aa931ecd9d0d952abc34dc0e5f7c6a30c6bb71b079fe399fde0329c02
+#5 resolve docker.io/library/ubuntu:22.04@sha256:b8b6ee6aa931ecd9d0d952abc34dc0e5f7c6a30c6bb71b079fe399fde0329c02 0.0s done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 135B done
+#6 DONE 0.0s
+
+#7 [6/8] COPY --chown=agent-admin:agent-admin monitor.sh /opt/agent/bin/monitor.sh
+#7 CACHED
+
+#8 [2/8] RUN apt-get update     && apt-get install --no-install-recommends --yes         bash         ca-certificates         coreutils         file         gawk         iproute2         procps         psmisc         util-linux     && rm -rf /var/lib/apt/lists/*
+#8 CACHED
+
+#9 [4/8] COPY --chown=agent-admin:agent-admin app/agent-app-linux-arm64 /opt/agent/agent-app-linux-arm64
+#9 CACHED
+
+#10 [5/8] COPY --chown=agent-admin:agent-admin app/secret.key /opt/agent/api_keys/secret.key
+#10 CACHED
+
+#11 [7/8] RUN chmod 0755 /opt/agent/agent-app-linux-arm64 /opt/agent/bin/monitor.sh     && chmod 0640 /opt/agent/api_keys/secret.key
+#11 CACHED
+
+#12 [3/8] RUN useradd --create-home --uid 10001 --shell /bin/bash agent-admin     && mkdir -p /opt/agent/bin /opt/agent/upload_files /opt/agent/api_keys /var/log/agent-app     && chown -R agent-admin:agent-admin /opt/agent /var/log/agent-app
+#12 CACHED
+
+#13 [8/8] WORKDIR /opt/agent
+#13 CACHED
+
+#14 exporting to image
+#14 exporting layers done
+#14 exporting manifest sha256:b7abc6dfb3013ad515051c5d1385c687538106833e8df57fc79f106a366cbd82 done
+#14 exporting config sha256:e5840e75267065e9b9fad503bd1bbd898e127818bfd1cf1f3ac67b47bf27f0fc done
+#14 exporting attestation manifest sha256:759a26bea3096908f95c27c507df5f52265076f29237bfffa1f97b21e31b93f4 done
+#14 exporting manifest list sha256:c43ee84a5bcf89c9474966e9483d7877faa894a885d7e9dc0bc82b12540c0e6f done
+#14 naming to docker.io/codyssey/agent-leak-app:arm64 done
+#14 unpacking to docker.io/codyssey/agent-leak-app:arm64 done
+#14 DONE 0.0s
+
+#15 resolving provenance for metadata file
+#15 DONE 0.0s
+ Image codyssey/agent-leak-app:arm64 Built 

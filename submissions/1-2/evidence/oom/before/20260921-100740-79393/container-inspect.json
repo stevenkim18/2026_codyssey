@@ -1,0 +1,227 @@
+[
+    {
+        "Id": "25af87908feb9844873ce04dd248b91341e72ea740b2938266ea7ec55f769f98",
+        "Created": "2026-09-21T01:07:42.825814175Z",
+        "Path": "/opt/agent/agent-app-linux-arm64",
+        "Args": [],
+        "State": {
+            "Status": "exited",
+            "Running": false,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 0,
+            "ExitCode": 137,
+            "Error": "",
+            "StartedAt": "2026-09-21T01:07:42.8554518Z",
+            "FinishedAt": "2026-09-21T01:08:00.16156871Z"
+        },
+        "Image": "sha256:2b9a97fbf8748f9dfde98b79dc1495aeff5293fea15c614353f130c69c30dccf",
+        "ResolvConfPath": "/var/lib/docker/containers/25af87908feb9844873ce04dd248b91341e72ea740b2938266ea7ec55f769f98/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/25af87908feb9844873ce04dd248b91341e72ea740b2938266ea7ec55f769f98/hostname",
+        "HostsPath": "/var/lib/docker/containers/25af87908feb9844873ce04dd248b91341e72ea740b2938266ea7ec55f769f98/hosts",
+        "LogPath": "/var/lib/docker/containers/25af87908feb9844873ce04dd248b91341e72ea740b2938266ea7ec55f769f98/25af87908feb9844873ce04dd248b91341e72ea740b2938266ea7ec55f769f98-json.log",
+        "Name": "/codyssey-agent-oom-before-20260921-100740-79393",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "codyssey-subject1-2_default",
+            "PortBindings": {
+                "15034/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "15034"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 1073741824,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 2147483648,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ],
+            "Init": true
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "25af87908feb",
+            "Domainname": "",
+            "User": "agent-admin",
+            "AttachStdin": true,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "15034/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": true,
+            "StdinOnce": true,
+            "Env": [
+                "AGENT_PORT=15034",
+                "AGENT_HOME=/opt/agent",
+                "AGENT_LOG_DIR=/var/log/agent-app",
+                "AGENT_UPLOAD_DIR=/opt/agent/upload_files",
+                "CPU_MAX_OCCUPY=10",
+                "MULTI_THREAD_ENABLE=false",
+                "MEMORY_LIMIT=128",
+                "AGENT_KEY_PATH=/opt/agent/api_keys",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive"
+            ],
+            "Cmd": null,
+            "Image": "codyssey/agent-leak-app:arm64",
+            "Volumes": null,
+            "WorkingDir": "/opt/agent",
+            "Entrypoint": [
+                "/opt/agent/agent-app-linux-arm64"
+            ],
+            "Labels": {
+                "com.docker.compose.config-hash": "03c4483c84e89de87ed1e1871bcc9608e8b56f39385bcd5956522f0126d9eb78",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:2b9a97fbf8748f9dfde98b79dc1495aeff5293fea15c614353f130c69c30dccf",
+                "com.docker.compose.oneoff": "True",
+                "com.docker.compose.project": "codyssey-subject1-2",
+                "com.docker.compose.project.config_files": "/Users/seungwookim/Code/edu/Codyssey/2026_codyssey/submissions/1-2/docker/compose.yaml",
+                "com.docker.compose.project.working_dir": "/Users/seungwookim/Code/edu/Codyssey/2026_codyssey/submissions/1-2/docker",
+                "com.docker.compose.service": "agent",
+                "com.docker.compose.slug": "0486af2b09d667aad639f667aebd72f99dc0b970efb322824458a4037b6f295a",
+                "com.docker.compose.version": "5.3.0",
+                "org.opencontainers.image.version": "22.04"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "",
+            "SandboxKey": "",
+            "Ports": {},
+            "Networks": {
+                "codyssey-subject1-2_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "codyssey-agent-oom-before-20260921-100740-79393"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "5cee2a72712ba17734424f576a07dacecda1ae1c509e8bcc4ce1c897a6a679e7",
+                    "EndpointID": "",
+                    "Gateway": "",
+                    "IPAddress": "",
+                    "MacAddress": "",
+                    "IPPrefixLen": 0,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "codyssey-agent-oom-before-20260921-100740-79393",
+                        "25af87908feb"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:b7abc6dfb3013ad515051c5d1385c687538106833e8df57fc79f106a366cbd82",
+            "size": 1806,
+            "platform": {
+                "architecture": "arm64",
+                "os": "linux"
+            }
+        }
+    }
+]
