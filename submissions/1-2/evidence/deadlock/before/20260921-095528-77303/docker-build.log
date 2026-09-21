@@ -1,0 +1,207 @@
+ Image codyssey/agent-leak-app:arm64 Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 674B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.34kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:22.04
+#3 DONE 3.6s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/8] FROM docker.io/library/ubuntu:22.04@sha256:b8b6ee6aa931ecd9d0d952abc34dc0e5f7c6a30c6bb71b079fe399fde0329c02
+#5 resolve docker.io/library/ubuntu:22.04@sha256:b8b6ee6aa931ecd9d0d952abc34dc0e5f7c6a30c6bb71b079fe399fde0329c02 done
+#5 CACHED
+
+#6 [internal] load build context
+#6 transferring context: 6.27MB 0.1s done
+#6 DONE 0.1s
+
+#7 [2/8] RUN apt-get update     && apt-get install --no-install-recommends --yes         bash         ca-certificates         coreutils         file         gawk         iproute2         procps         psmisc         util-linux     && rm -rf /var/lib/apt/lists/*
+#7 0.846 Get:1 http://ports.ubuntu.com/ubuntu-ports jammy InRelease [270 kB]
+#7 2.020 Get:2 http://ports.ubuntu.com/ubuntu-ports jammy-updates InRelease [128 kB]
+#7 2.302 Get:3 http://ports.ubuntu.com/ubuntu-ports jammy-backports InRelease [127 kB]
+#7 2.577 Get:4 http://ports.ubuntu.com/ubuntu-ports jammy-security InRelease [129 kB]
+#7 2.861 Get:5 http://ports.ubuntu.com/ubuntu-ports jammy/universe arm64 Packages [17.2 MB]
+#7 4.681 Get:6 http://ports.ubuntu.com/ubuntu-ports jammy/multiverse arm64 Packages [224 kB]
+#7 4.702 Get:7 http://ports.ubuntu.com/ubuntu-ports jammy/restricted arm64 Packages [24.2 kB]
+#7 4.703 Get:8 http://ports.ubuntu.com/ubuntu-ports jammy/main arm64 Packages [1758 kB]
+#7 4.839 Get:9 http://ports.ubuntu.com/ubuntu-ports jammy-updates/multiverse arm64 Packages [70.2 kB]
+#7 4.840 Get:10 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 Packages [4438 kB]
+#7 5.143 Get:11 http://ports.ubuntu.com/ubuntu-ports jammy-updates/restricted arm64 Packages [8100 kB]
+#7 5.552 Get:12 http://ports.ubuntu.com/ubuntu-ports jammy-updates/universe arm64 Packages [1704 kB]
+#7 5.685 Get:13 http://ports.ubuntu.com/ubuntu-ports jammy-backports/main arm64 Packages [113 kB]
+#7 5.686 Get:14 http://ports.ubuntu.com/ubuntu-ports jammy-backports/universe arm64 Packages [37.1 kB]
+#7 5.688 Get:15 http://ports.ubuntu.com/ubuntu-ports jammy-security/restricted arm64 Packages [7780 kB]
+#7 6.195 Get:16 http://ports.ubuntu.com/ubuntu-ports jammy-security/main arm64 Packages [4111 kB]
+#7 6.393 Get:17 http://ports.ubuntu.com/ubuntu-ports jammy-security/universe arm64 Packages [1406 kB]
+#7 6.447 Get:18 http://ports.ubuntu.com/ubuntu-ports jammy-security/multiverse arm64 Packages [63.4 kB]
+#7 6.643 Fetched 47.7 MB in 6s (7367 kB/s)
+#7 6.643 Reading package lists...
+#7 7.331 Reading package lists...
+#7 8.093 Building dependency tree...
+#7 8.250 Reading state information...
+#7 8.410 bash is already the newest version (5.1-6ubuntu1.1).
+#7 8.410 coreutils is already the newest version (8.32-4.1ubuntu1.4).
+#7 8.410 procps is already the newest version (2:3.3.17-6ubuntu2.1).
+#7 8.410 util-linux is already the newest version (2.37.2-4ubuntu3.6).
+#7 8.410 The following additional packages will be installed:
+#7 8.410   libbpf0 libbsd0 libcap2-bin libelf1 libmagic-mgc libmagic1 libmd0 libmnl0
+#7 8.411   libmpfr6 libreadline8 libsigsegv2 libxtables12 openssl readline-common
+#7 8.411 Suggested packages:
+#7 8.411   gawk-doc iproute2-doc readline-doc
+#7 8.411 Recommended packages:
+#7 8.411   libatm1 libpam-cap
+#7 8.446 The following NEW packages will be installed:
+#7 8.446   ca-certificates file gawk iproute2 libbpf0 libbsd0 libcap2-bin libelf1
+#7 8.446   libmagic-mgc libmagic1 libmd0 libmnl0 libmpfr6 libreadline8 libsigsegv2
+#7 8.447   libxtables12 openssl psmisc readline-common
+#7 8.873 0 upgraded, 19 newly installed, 0 to remove and 7 not upgraded.
+#7 8.873 Need to get 4088 kB of archives.
+#7 8.873 After this operation, 17.7 MB of additional disk space will be used.
+#7 8.873 Get:1 http://ports.ubuntu.com/ubuntu-ports jammy/main arm64 libmpfr6 arm64 4.1.0-3build3 [245 kB]
+#7 10.08 Get:2 http://ports.ubuntu.com/ubuntu-ports jammy/main arm64 readline-common all 8.1.2-1 [53.5 kB]
+#7 10.11 Get:3 http://ports.ubuntu.com/ubuntu-ports jammy/main arm64 libreadline8 arm64 8.1.2-1 [153 kB]
+#7 10.23 Get:4 http://ports.ubuntu.com/ubuntu-ports jammy/main arm64 libsigsegv2 arm64 2.13-1ubuntu3 [14.5 kB]
+#7 10.24 Get:5 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 gawk arm64 1:5.1.0-1ubuntu0.2 [427 kB]
+#7 10.50 Get:6 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 openssl arm64 3.0.2-0ubuntu1.29 [1161 kB]
+#7 10.91 Get:7 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 ca-certificates all 20260601~22.04.1 [141 kB]
+#7 10.91 Get:8 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 libelf1 arm64 0.186-1ubuntu0.1 [50.8 kB]
+#7 10.92 Get:9 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 libbpf0 arm64 1:0.5.0-1ubuntu22.04.1 [140 kB]
+#7 10.92 Get:10 http://ports.ubuntu.com/ubuntu-ports jammy/main arm64 libmd0 arm64 1.0.4-1build1 [23.8 kB]
+#7 10.92 Get:11 http://ports.ubuntu.com/ubuntu-ports jammy/main arm64 libbsd0 arm64 0.11.5-1 [43.7 kB]
+#7 10.92 Get:12 http://ports.ubuntu.com/ubuntu-ports jammy/main arm64 libmnl0 arm64 1.0.4-3build2 [12.9 kB]
+#7 10.92 Get:13 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 libxtables12 arm64 1.8.7-1ubuntu5.2 [30.9 kB]
+#7 10.92 Get:14 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 libcap2-bin arm64 1:2.44-1ubuntu0.22.04.3 [25.5 kB]
+#7 10.92 Get:15 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 iproute2 arm64 5.15.0-1ubuntu2.2 [1083 kB]
+#7 11.12 Get:16 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 libmagic-mgc arm64 1:5.41-3ubuntu0.1 [257 kB]
+#7 11.14 Get:17 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 libmagic1 arm64 1:5.41-3ubuntu0.1 [85.0 kB]
+#7 11.14 Get:18 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 file arm64 1:5.41-3ubuntu0.1 [21.6 kB]
+#7 11.14 Get:19 http://ports.ubuntu.com/ubuntu-ports jammy/main arm64 psmisc arm64 23.4-2build3 [118 kB]
+#7 11.28 debconf: delaying package configuration, since apt-utils is not installed
+#7 11.30 Fetched 4088 kB in 3s (1515 kB/s)
+#7 11.31 Selecting previously unselected package libmpfr6:arm64.
+#7 11.31 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4387 files and directories currently installed.)
+#7 11.32 Preparing to unpack .../libmpfr6_4.1.0-3build3_arm64.deb ...
+#7 11.33 Unpacking libmpfr6:arm64 (4.1.0-3build3) ...
+#7 11.34 Selecting previously unselected package readline-common.
+#7 11.34 Preparing to unpack .../readline-common_8.1.2-1_all.deb ...
+#7 11.34 Unpacking readline-common (8.1.2-1) ...
+#7 11.36 Selecting previously unselected package libreadline8:arm64.
+#7 11.36 Preparing to unpack .../libreadline8_8.1.2-1_arm64.deb ...
+#7 11.36 Unpacking libreadline8:arm64 (8.1.2-1) ...
+#7 11.37 Selecting previously unselected package libsigsegv2:arm64.
+#7 11.37 Preparing to unpack .../libsigsegv2_2.13-1ubuntu3_arm64.deb ...
+#7 11.37 Unpacking libsigsegv2:arm64 (2.13-1ubuntu3) ...
+#7 11.38 Setting up libmpfr6:arm64 (4.1.0-3build3) ...
+#7 11.40 Setting up readline-common (8.1.2-1) ...
+#7 11.40 Setting up libreadline8:arm64 (8.1.2-1) ...
+#7 11.41 Setting up libsigsegv2:arm64 (2.13-1ubuntu3) ...
+#7 11.42 Selecting previously unselected package gawk.
+#7 11.42 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4426 files and directories currently installed.)
+#7 11.43 Preparing to unpack .../00-gawk_1%3a5.1.0-1ubuntu0.2_arm64.deb ...
+#7 11.43 Unpacking gawk (1:5.1.0-1ubuntu0.2) ...
+#7 11.45 Selecting previously unselected package openssl.
+#7 11.45 Preparing to unpack .../01-openssl_3.0.2-0ubuntu1.29_arm64.deb ...
+#7 11.45 Unpacking openssl (3.0.2-0ubuntu1.29) ...
+#7 11.47 Selecting previously unselected package ca-certificates.
+#7 11.47 Preparing to unpack .../02-ca-certificates_20260601~22.04.1_all.deb ...
+#7 11.47 Unpacking ca-certificates (20260601~22.04.1) ...
+#7 11.49 Selecting previously unselected package libelf1:arm64.
+#7 11.49 Preparing to unpack .../03-libelf1_0.186-1ubuntu0.1_arm64.deb ...
+#7 11.49 Unpacking libelf1:arm64 (0.186-1ubuntu0.1) ...
+#7 11.51 Selecting previously unselected package libbpf0:arm64.
+#7 11.51 Preparing to unpack .../04-libbpf0_1%3a0.5.0-1ubuntu22.04.1_arm64.deb ...
+#7 11.51 Unpacking libbpf0:arm64 (1:0.5.0-1ubuntu22.04.1) ...
+#7 11.52 Selecting previously unselected package libmd0:arm64.
+#7 11.52 Preparing to unpack .../05-libmd0_1.0.4-1build1_arm64.deb ...
+#7 11.52 Unpacking libmd0:arm64 (1.0.4-1build1) ...
+#7 11.53 Selecting previously unselected package libbsd0:arm64.
+#7 11.53 Preparing to unpack .../06-libbsd0_0.11.5-1_arm64.deb ...
+#7 11.54 Unpacking libbsd0:arm64 (0.11.5-1) ...
+#7 11.55 Selecting previously unselected package libmnl0:arm64.
+#7 11.55 Preparing to unpack .../07-libmnl0_1.0.4-3build2_arm64.deb ...
+#7 11.55 Unpacking libmnl0:arm64 (1.0.4-3build2) ...
+#7 11.56 Selecting previously unselected package libxtables12:arm64.
+#7 11.56 Preparing to unpack .../08-libxtables12_1.8.7-1ubuntu5.2_arm64.deb ...
+#7 11.56 Unpacking libxtables12:arm64 (1.8.7-1ubuntu5.2) ...
+#7 11.58 Selecting previously unselected package libcap2-bin.
+#7 11.58 Preparing to unpack .../09-libcap2-bin_1%3a2.44-1ubuntu0.22.04.3_arm64.deb ...
+#7 11.58 Unpacking libcap2-bin (1:2.44-1ubuntu0.22.04.3) ...
+#7 11.59 Selecting previously unselected package iproute2.
+#7 11.59 Preparing to unpack .../10-iproute2_5.15.0-1ubuntu2.2_arm64.deb ...
+#7 11.59 Unpacking iproute2 (5.15.0-1ubuntu2.2) ...
+#7 11.62 Selecting previously unselected package libmagic-mgc.
+#7 11.62 Preparing to unpack .../11-libmagic-mgc_1%3a5.41-3ubuntu0.1_arm64.deb ...
+#7 11.62 Unpacking libmagic-mgc (1:5.41-3ubuntu0.1) ...
+#7 11.65 Selecting previously unselected package libmagic1:arm64.
+#7 11.65 Preparing to unpack .../12-libmagic1_1%3a5.41-3ubuntu0.1_arm64.deb ...
+#7 11.65 Unpacking libmagic1:arm64 (1:5.41-3ubuntu0.1) ...
+#7 11.66 Selecting previously unselected package file.
+#7 11.66 Preparing to unpack .../13-file_1%3a5.41-3ubuntu0.1_arm64.deb ...
+#7 11.66 Unpacking file (1:5.41-3ubuntu0.1) ...
+#7 11.67 Selecting previously unselected package psmisc.
+#7 11.67 Preparing to unpack .../14-psmisc_23.4-2build3_arm64.deb ...
+#7 11.68 Unpacking psmisc (23.4-2build3) ...
+#7 11.69 Setting up libmagic-mgc (1:5.41-3ubuntu0.1) ...
+#7 11.70 Setting up gawk (1:5.1.0-1ubuntu0.2) ...
+#7 11.71 Setting up psmisc (23.4-2build3) ...
+#7 11.71 Setting up libmagic1:arm64 (1:5.41-3ubuntu0.1) ...
+#7 11.72 Setting up file (1:5.41-3ubuntu0.1) ...
+#7 11.72 Setting up libcap2-bin (1:2.44-1ubuntu0.22.04.3) ...
+#7 11.73 Setting up libmnl0:arm64 (1.0.4-3build2) ...
+#7 11.73 Setting up libxtables12:arm64 (1.8.7-1ubuntu5.2) ...
+#7 11.74 Setting up libmd0:arm64 (1.0.4-1build1) ...
+#7 11.74 Setting up openssl (3.0.2-0ubuntu1.29) ...
+#7 11.75 Setting up libbsd0:arm64 (0.11.5-1) ...
+#7 11.75 Setting up libelf1:arm64 (0.186-1ubuntu0.1) ...
+#7 11.75 Setting up ca-certificates (20260601~22.04.1) ...
+#7 11.94 Updating certificates in /etc/ssl/certs...
+#7 12.18 121 added, 0 removed; done.
+#7 12.19 Setting up libbpf0:arm64 (1:0.5.0-1ubuntu22.04.1) ...
+#7 12.19 Setting up iproute2 (5.15.0-1ubuntu2.2) ...
+#7 12.24 Processing triggers for libc-bin (2.35-0ubuntu3.14) ...
+#7 12.26 Processing triggers for ca-certificates (20260601~22.04.1) ...
+#7 12.27 Updating certificates in /etc/ssl/certs...
+#7 12.42 0 added, 0 removed; done.
+#7 12.42 Running hooks in /etc/ca-certificates/update.d...
+#7 12.42 done.
+#7 DONE 12.5s
+
+#8 [3/8] RUN useradd --create-home --uid 10001 --shell /bin/bash agent-admin     && mkdir -p /opt/agent/bin /opt/agent/upload_files /opt/agent/api_keys /var/log/agent-app     && chown -R agent-admin:agent-admin /opt/agent /var/log/agent-app
+#8 DONE 0.1s
+
+#9 [4/8] COPY --chown=agent-admin:agent-admin app/agent-app-linux-arm64 /opt/agent/agent-app-linux-arm64
+#9 DONE 0.0s
+
+#10 [5/8] COPY --chown=agent-admin:agent-admin app/secret.key /opt/agent/api_keys/secret.key
+#10 DONE 0.0s
+
+#11 [6/8] COPY --chown=agent-admin:agent-admin monitor.sh /opt/agent/bin/monitor.sh
+#11 DONE 0.0s
+
+#12 [7/8] RUN chmod 0755 /opt/agent/agent-app-linux-arm64 /opt/agent/bin/monitor.sh     && chmod 0640 /opt/agent/api_keys/secret.key
+#12 DONE 0.1s
+
+#13 [8/8] WORKDIR /opt/agent
+#13 DONE 0.0s
+
+#14 exporting to image
+#14 exporting layers
+#14 exporting layers 0.4s done
+#14 exporting manifest sha256:b7abc6dfb3013ad515051c5d1385c687538106833e8df57fc79f106a366cbd82 done
+#14 exporting config sha256:e5840e75267065e9b9fad503bd1bbd898e127818bfd1cf1f3ac67b47bf27f0fc done
+#14 exporting attestation manifest sha256:3ea42f097e8ea68c6bddc4c11778b5a30c4883ce7bba11f4ae5a456f01c05ea2 done
+#14 exporting manifest list sha256:844408ab78d23352250aa4e9a71f3f876798d00bdb4bdc9186204615bb74e912 done
+#14 naming to docker.io/codyssey/agent-leak-app:arm64 done
+#14 unpacking to docker.io/codyssey/agent-leak-app:arm64 0.1s done
+#14 DONE 0.6s
+
+#15 resolving provenance for metadata file
+#15 DONE 0.0s
+ Image codyssey/agent-leak-app:arm64 Built 
