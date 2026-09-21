@@ -1,0 +1,42 @@
+2026-09-21T01:23:13.850730051Z >>> Starting Agent Boot Sequence...
+2026-09-21T01:23:13.850755718Z [1/6] Checking User Account               [OK]
+2026-09-21T01:23:13.850759468Z    ... Running as service user 'agent-admin' (uid=10001)
+2026-09-21T01:23:13.850760426Z [2/6] Verifying Environment Variables     [OK]
+2026-09-21T01:23:13.850761259Z    ... All required Envs correct
+2026-09-21T01:23:13.850762134Z [3/6] Checking Required Files             [OK]
+2026-09-21T01:23:13.850763051Z    ... Verified 'secret.key' with correct key string.
+2026-09-21T01:23:13.850763926Z [4/6] Checking Port Availability          [OK]
+2026-09-21T01:23:13.850764718Z    ... Port 15034 is available.
+2026-09-21T01:23:13.850765468Z [5/6] Verifying Log Permission            [OK]
+2026-09-21T01:23:13.850766218Z    ... Log directory is writable: /var/log/agent-app
+2026-09-21T01:23:13.850767009Z [6/6] Verifying Mission Environment       [OK]
+2026-09-21T01:23:13.850767759Z    ... MEMORY_LIMIT=512MB, CPU_MAX_OCCUPY=100%, MULTI_THREAD_ENABLE=False
+2026-09-21T01:23:13.850768593Z ------------------------------------------------------------
+2026-09-21T01:23:13.850769426Z All Boot Checks Passed!
+2026-09-21T01:23:13.850770176Z Agent READY
+2026-09-21T01:23:13.850770926Z 2026-09-21 01:23:13,850 [INFO] [SafetyGuard] Process priority lowered (nice=10).
+2026-09-21T01:23:13.850771801Z 2026-09-21 01:23:13,850 [INFO] Agent listening at port 15034
+2026-09-21T01:23:15.861933552Z 
+2026-09-21T01:23:15.861976802Z ==================================================
+2026-09-21T01:23:15.861981010Z  [ Agent Initiate ] Resource Check 
+2026-09-21T01:23:15.861983719Z ==================================================
+2026-09-21T01:23:15.861986052Z  [ MEMORY ] Limit: 512MB 		[ OK ]
+2026-09-21T01:23:15.861988760Z  [ CPU    ] Limit: 100%  		[ WARNING: Recommend Under 50% ]
+2026-09-21T01:23:15.861991385Z  [ THREAD ] Concurrency: False 		[ OK ]
+2026-09-21T01:23:15.861993677Z --------------------------------------------------
+2026-09-21T01:23:15.861995885Z  >>> SYSTEM STATUS: STABLE. STARTING WORKLOAD MONITORING...
+2026-09-21T01:23:15.861998469Z ==================================================
+2026-09-21T01:23:15.862000635Z 
+2026-09-21T01:23:15.862002802Z 2026-09-21 01:23:15,857 [INFO] [CpuWorker] Started. Maximum CPU Limit: 100%
+2026-09-21T01:23:15.862005177Z 2026-09-21 01:23:15,858 [INFO] [CpuWorker] Current Load: 5.00%
+2026-09-21T01:23:18.990087387Z 2026-09-21 01:23:18,988 [INFO] [CpuWorker] Current Load: 9.29%
+2026-09-21T01:23:22.118004388Z 2026-09-21 01:23:22,115 [INFO] [CpuWorker] Current Load: 12.56%
+2026-09-21T01:23:25.242346626Z 2026-09-21 01:23:25,240 [INFO] [CpuWorker] Current Load: 16.72%
+2026-09-21T01:23:28.367658377Z 2026-09-21 01:23:28,367 [INFO] [CpuWorker] Current Load: 26.53%
+2026-09-21T01:23:31.495150254Z 2026-09-21 01:23:31,493 [INFO] [CpuWorker] Current Load: 32.96%
+2026-09-21T01:23:34.613941755Z 2026-09-21 01:23:34,612 [INFO] [CpuWorker] Current Load: 33.12%
+2026-09-21T01:23:37.747125132Z 2026-09-21 01:23:37,744 [INFO] [CpuWorker] Current Load: 36.84%
+2026-09-21T01:23:40.874554216Z 2026-09-21 01:23:40,872 [INFO] [CpuWorker] Current Load: 41.87%
+2026-09-21T01:23:44.002989718Z 2026-09-21 01:23:44,002 [INFO] [CpuWorker] Current Load: 47.57%
+2026-09-21T01:23:47.135641553Z 2026-09-21 01:23:47,133 [INFO] [CpuWorker] Current Load: 53.20%
+2026-09-21T01:23:47.239632094Z 2026-09-21 01:23:47,239 [CRITICAL] [CpuWorker] CPU Threshold Violated! (53.2%).
