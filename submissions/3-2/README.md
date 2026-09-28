@@ -26,6 +26,12 @@ Current user: Alice Kim
 python3 -m unittest discover -s tests -v
 ```
 
+단계별 학습 문서는 다음 순서로 읽습니다.
+
+1. [Mini Git 시작하기: 실행 방법과 기본 명령어](docs/study/01-getting-started.md)
+2. [커밋 그래프: DAG, LOG, PATH, ANCESTORS](docs/study/02-commit-graph.md)
+3. [검색과 정렬: 역색인과 병합 정렬](docs/study/03-search-and-sort.md)
+
 ## 입력 규칙
 
 - 명령어는 대소문자를 구분하지 않습니다.
