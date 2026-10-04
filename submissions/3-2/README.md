@@ -32,6 +32,13 @@ python3 -m unittest discover -s tests -v
 2. [커밋 그래프: DAG, LOG, PATH, ANCESTORS](docs/study/02-commit-graph.md)
 3. [검색과 정렬: 역색인과 병합 정렬](docs/study/03-search-and-sort.md)
 
+평가 문항별 답변 가이드는 다음 문서에서 확인할 수 있습니다.
+
+- [평가 항목 1: 기능 시연과 답변](docs/evaluation/evaluation-1.md)
+- [평가 항목 2: 자료구조와 코드 구성 답변](docs/evaluation/evaluation-2.md)
+- [평가 항목 3: 알고리즘 선택과 시간복잡도 답변](docs/evaluation/evaluation-3.md)
+- [평가 항목 4: 확장 상황과 설계 변경 답변](docs/evaluation/evaluation-4.md)
+
 ## 입력 규칙
 
 - 명령어는 대소문자를 구분하지 않습니다.
